@@ -19,15 +19,13 @@ namespace DP.Core
 
             foreach (string name in names)
             {
-                
                 if (name.Contains(".jpeg"))
                 {
                     DP.GetPhoto(name);
                     Console.WriteLine("Downloaded Photo #" + counter) ;
                     counter++;
                 }
-            }
-            
+            }  
         }
         public void Centralize()
         {
@@ -61,13 +59,11 @@ namespace DP.Core
                             fail = true;
                         }
 
-
                         break;
 
                     case "Fail":
 
                         errCounter++;
-
                         DP.SaveFails(errCounter, str.Substring(str.LastIndexOf("/") + 1), "Unknown error (CLIENT)");
 
                         if (!fail)
@@ -93,7 +89,6 @@ namespace DP.Core
             if (fail)
             {
                 Console.WriteLine("Successfully centralized " + counter + " photos. Check directory...");
-
             }
             else
             {

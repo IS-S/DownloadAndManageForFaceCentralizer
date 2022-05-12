@@ -10,7 +10,6 @@ namespace DP.DataProvider
     {
         public void GetPhoto(string name)
         {
-            //ссылка
             byte[] photobytes = null;
             using (WebClient client = new WebClient())
             {
@@ -21,8 +20,6 @@ namespace DP.DataProvider
 #pragma warning disable CA1416 // Validate platform compatibility
                     using (var yourImage = Image.FromStream(mem))
                     {
-
-
                         yourImage.Save("*path*/" + name, ImageFormat.Jpeg);
 
 #pragma warning restore CA1416 // Validate platform compatibility
@@ -30,7 +27,6 @@ namespace DP.DataProvider
                 }
             }
         }
-
         public List<string> GetNames(string csvPath)
         {
             List<string> data = new List<string>();
